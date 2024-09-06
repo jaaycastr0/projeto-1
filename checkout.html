@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Finalizar Pedido</h1>
+
+    <form id="checkoutForm">
+        <label for="name">Nome Completo:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="address">Endereço:</label>
+        <input type="text" id="address" name="address" required>
+
+        <h3>Forma de Pagamento:</h3>
+        <label>
+            <input type="radio" name="paymentMethod" value="Cartão de Crédito" required> Cartão de Crédito
+        </label>
+        <label>
+            <input type="radio" name="paymentMethod" value="Cartão de Débito" required> Cartão de Débito
+        </label>
+        <label>
+            <input type="radio" name="paymentMethod" value="Pix" required> Pix
+        </label>
+
+        <a href="./recibo.html"><button type="button" onclick="confirmOrder()">Confirmar Pedido</button></a>
+        <a href="./cancelado.html"><button type="button" onclick="cancelOrder()">Cancelar Pedido</button></a>
+    </form>
+
+    <script>
+        function confirmOrder() {
+            const name = document.getElementById('name').value;
+            const address = document.getElementById('address').value;
+            const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked');
+
+            if (!name) {
+                alert('Por favor, preencha o seu nome.');
+                return;
+            }
+            if (!address) {
+                alert('Por favor, preencha o seu endereço.');
+                return;
+            }
+            if (!paymentMethod) {
+                alert('Por favor, selecione uma forma de pagamento.');
+                return;
+            }
+
+            localStorage.setItem('name', name);
+            localStorage.setItem('address', address);
+            localStorage.setItem('paymentMethod', paymentMethod.value);
+
+            window.location.href = 'order-summary.html';
+        }
+
+        function cancelOrder() {
+            // Limpar o localStorage e redirecionar para a página de cancelamento
+            localStorage.clear();
+            window.location.href = 'order-cancelled.html';
+        }
+    </script>
+</body>
+</html>

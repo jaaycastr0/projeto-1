@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo do Pedido</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Resumo do Pedido</h1>
+
+    <h2>Itens Selecionados</h2>
+    <div id="orderItems"></div>
+
+    <h2>Informações de Entrega</h2>
+    <p><strong>Nome:</strong> <span id="orderName"></span></p>
+    <p><strong>Endereço:</strong> <span id="orderAddress"></span></p>
+    <p><strong>Forma de Pagamento:</strong> <span id="orderPaymentMethod"></span></p>
+
+    <h3>Total: R$ <span id="orderTotal">0,00</span></h3>
+    <script>
+        // Função para carregar os dados do pedido
+        function loadOrderSummary() {
+            const orderItemsContainer = document.getElementById('orderItems');
+            const orderTotalElement = document.getElementById('orderTotal');
+            const orderNameElement = document.getElementById('orderName');
+            const orderAddressElement = document.getElementById('orderAddress');
+            const orderPaymentMethodElement = document.getElementById('orderPaymentMethod');
+
+            // Recuperar dados do localStorage
+            const selectedItems = JSON.parse(localStorage.getItem('selectedItems')) || [];
+            const totalPrice = parseFloat(localStorage.getItem('totalPrice')) || 0;
+            const name = localStorage.getItem('name') || 'Nome não informado';
+            const address = localStorage.getItem('address') || 'Endereço não informado';
+            const paymentMethod = localStorage.getItem('paymentMethod') || 'Método de pagamento não informado';
+
+            // Exibir os itens do pedido
+            orderItemsContainer.innerHTML = '';
+            selectedItems.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.innerText = `${item.name} (x${item.quantity}) - R$ ${(item.price * item.quantity).toFixed(2)}`;
+                orderItemsContainer.appendChild(itemElement);
+            });
+
+            // Exibir o total
+            orderTotalElement.innerText = totalPrice.toFixed(2);
+
+            // Exibir as informações de nome, endereço e pagamento
+            orderNameElement.innerText = name;
+            orderAddressElement.innerText = address;
+            orderPaymentMethodElement.innerText = paymentMethod;
+        }
+
+        // Carregar o resumo do pedido ao carregar a página
+        window.onload = loadOrderSummary;
+    </script>
+</body>
+</html>

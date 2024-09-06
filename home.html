@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    
+    <header class="header">
+        <section class="flex">
+            <a href="Home.html" class="logo">Castro's food</a>
+
+        </section>
+    </header>
+
+
+
+    <div class="heading">
+        <h3>Cardápio</h3>
+    </div>
+
+    <h1 class="title">Hambúrguer</h1>
+    <div class="card-container">
+        <div class="card">
+            <img src="./assets/uploaded_img/burger-1.png" alt="Hambúrguer Clássico">
+            <h3>Hambúrguer Clássico</h3>
+            <p>Delicioso hambúrguer com carne suculenta.</p>
+            <span>R$ 26,00</span>
+            <label for="quantity1">Quantidade:</label>
+            <input type="number" id="quantity1" min="0" value="0">
+            <button onclick="addToCart('Hambúrguer Clássico', 26.00, document.getElementById('quantity1').value)">Adicionar ao Carrinho</button>
+        </div>
+        <div class="card">
+            <img src="./assets/burguer bacon.png" alt="Baconzito">
+            <h3>Baconzito</h3>
+            <p>Nosso Hambúrguer feito especialmente para os fans de bacon.</p>
+            <span>R$ 30,00</span>
+            <label for="quantity2">Quantidade:</label>
+            <input type="number" id="quantity2" min="0" value="0">
+            <button onclick="addToCart('Baconzito', 30.00, document.getElementById('quantity2').value)">Adicionar ao Carrinho</button>
+        </div>
+        <div class="card">
+            <img src="./assets/uploaded_img/burger-2.png" alt="Hambúrguer de Frango">
+            <h3>Hambúrguer de Frango</h3>
+            <p>Opção leve e saborosa com filé de frango.</p>
+            <span>R$ 22,00</span>
+            <label for="quantity3">Quantidade:</label>
+            <input type="number" id="quantity3" min="0" value="0">
+            <button onclick="addToCart('Hambúrguer de Frango', 22.00, document.getElementById('quantity3').value)">Adicionar ao Carrinho</button>
+        </div>
+
+
+        <div class="card">
+            <img src="./assets/x-onions.png" alt="Onions Burguer">
+            <h3>Onions Burguer</h3>
+            <p>Hambúrguer que acompanha um rechada camada de cebola frita.</p>
+            <span>R$ 25,00</span>
+            <label for="quantity4">Quantidade:</label>
+            <input type="number" id="quantity4" min="0" value="0">
+            <button onclick="addToCart('Onions Burguer', 25.00, document.getElementById('quantity4').value)">Adicionar ao Carrinho</button>
+        </div>
+
+
+
+
+    </div>
+
+    <h1 class="title">Sobremesas</h1>
+    <div class="card-container">
+        <div class="card">
+            <img src="./assets/uploaded_img/dessert-5.png" alt="Sorvete">
+            <h3>Sorvete</h3>
+            <p>Nossos Sorvetes cremosos refrescantes.</p>
+            <span>R$ 8,00</span>
+            <label for="quantity5">Quantidade:</label>
+            <input type="number" id="quantity5" min="0" value="0">
+            <button onclick="addToCart('Sorvete', 8.00, document.getElementById('quantity5').value)">Adicionar ao Carrinho</button>
+        </div>
+        <div class="card">
+            <img src="./assets/uploaded_img/dessert-2.png" alt="Brownie">
+            <h3>Brownie</h3>
+            <p>Brownie crocante por fora e super macio por dentro.</p>
+            <span>R$ 6,00</span>
+            <label for="quantity6">Quantidade:</label>
+            <input type="number" id="quantity6" min="0" value="0">
+            <button onclick="addToCart('Brownie', 6.00, document.getElementById('quantity6').value)">Adicionar ao Carrinho</button>
+        </div>
+        <div class="card">
+            <img src="./assets/uploaded_img/dessert-3.png "alt="Sundae">
+            <h3>Sundae</h3>
+            <p>Nossos incríveis sabores de Sundae.</p>
+            <span>R$ 4,50</span>
+            <label for="quantity7">Quantidade:</label>
+            <input type="number" id="quantity7" min="0" value="0">
+            <button onclick="addToCart('Sundae', 4.50, document.getElementById('quantity7').value)">Adicionar ao Carrinho</button>
+        </div>
+        <div class="card">
+            <img src="./assets/uploaded_img/dessert-4.png" alt="Cupcake">
+            <h3>Cupcake</h3>
+            <p>Cupcake com bastante recheio de chocolate.</p>
+            <span>R$ 4,50</span>
+            <label for="quantity8">Quantidade:</label>
+            <input type="number" id="quantity8" min="0" value="0">
+            <button onclick="addToCart('Cupcake', 4.50, document.getElementById('quantity8').value)">Adicionar ao Carrinho</button>
+        </div>
+    </div>
+
+    <h1 class="title">Bebidas</h1>
+    <div class="card-container">
+        <div class="card">
+            <img src="./assets/refri.png" alt="Refrigerante">
+            <h3>Refrigerante</h3>
+            <p>Bebida refrescante de sua escolha.</p>
+            <span>R$ 8,00</span>
+            <label for="quantity9">Quantidade:</label>
+            <input type="number" id="quantity9" min="0" value="1">
+            <button onclick="addToCart('Refrigerante', 8.00, document.getElementById('quantity9').value)">Adicionar ao Carrinho</button>
+        </div>
+        <div class="card">
+            <img src="./assets/sucos.png" alt="Suco Natural">
+            <h3>Sucos naturais</h3>
+            <p>Suco natural preparado na hora.</p>
+            <span>R$ 10,00</span>
+            <label for="quantity10">Quantidade:</label>
+            <input type="number" id="quantity10" min="0" value="1">
+            <button onclick="addToCart('Suco Natural', 10.00, document.getElementById('quantity10').value)">Adicionar ao Carrinho</button>
+        </div>
+        <div class="card">
+            <img src="./assets/uploaded_img/drink-3.png" alt="Água">
+            <h3>Água</h3>
+            <p>Água mineral gelada.</p>
+            <span>R$ 3,00</span>
+            <label for="quantity11">Quantidade:</label>
+            <input type="number" id="quantity11" min="0" value="1">
+            <button onclick="addToCart('Água', 3.00, document.getElementById('quantity11').value)">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="card">
+            <img src="./assets/milkshake.png" alt="Milkshake">
+            <h3>Milkshake</h3>
+            <p>Experimente nossos deliciosos e refrescantes milkshakes da casa.</p>
+            <span>R$ 12,00</span>
+            <label for="quantity12">Quantidade:</label>
+            <input type="number" id="quantity12" min="0" value="1">
+            <button onclick="addToCart('Milkshake', 12.00, document.getElementById('quantity12').value)">Adicionar ao Carrinho</button>
+        </div>
+    </div>
+
+    <a href="cart.html"><button onclick="goToCart()">Ver Carrinho</button></a>
+
+    <script src="script.js"></script>
+</body>
+</html>
